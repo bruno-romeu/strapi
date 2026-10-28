@@ -34,6 +34,10 @@ The `admin::audit-log` content type is registered by the CE admin (`packages/cor
 
 The routes, controller, services and the `admin::audit-logs.read` / `admin::audit-logs.export` permission actions all use one condition, `isAuditLogsEnabled` in `packages/core/admin/ee/server/src/audit-logs/utils.ts`: the license includes the `audit-logs` feature and `admin.auditLogs.enabled` is not `false`. When the config disables audit logs, the role editor does not list the audit-log permissions.
 
+### Strict types
+
+With strict types, the controller is registered as `Core.Licensed<'audit-logs', Contract>`: an application that lists `audit-logs` in `licensedFeatures` gets the contract. The types do not model `admin.auditLogs.enabled`. The two action IDs are declared in `PermissionActions`. Read [License-gated contracts](../../../../contributing/05-typescript.md#license-gated-contracts).
+
 ### Subscribing to all events
 
 The Audit Logs feature adds a subscriber to the [EventHub](../../core/event-hub.md), allowing it to listen to all events in the application. However, we don't save every event in the audit logs; we only save the default ones (see the defaultEvents array in the service file).
