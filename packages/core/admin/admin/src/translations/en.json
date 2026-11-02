@@ -309,6 +309,7 @@
   "Settings.permissions.auditLogs.workflow.delete": "Delete workflow",
   "Settings.permissions.auditLogs.workflow.update": "Update workflow",
   "Settings.permissions.category": "Permissions settings for the {category}",
+  "Settings.permissions.category.disabled-by-config": "Disabled by configuration",
   "Settings.permissions.category.plugins": "Permissions settings for the {category} plugin",
   "Settings.permissions.conditions.anytime": "Anytime",
   "Settings.permissions.conditions.apply": "Apply",
